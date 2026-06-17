@@ -66,6 +66,7 @@ The greyscale shader is from [@snes19xx](https://github.com/snes19xx)'s [surface
 
 The media player's album art implementation is taken from [Rexcrazy804](https://github.com/Rexcrazy804)'s [Zaphkiel](https://github.com/Rexcrazy804/Zaphkiel).
 
+Shoutout to [blairxu13](https://github.com/blairxu13)'s [persona3-website](https://github.com/blairxu13/persona3-website).
 ## Power Menu
 
 The power menu currently uses loginctl commands, feel free to change them to your needs.
