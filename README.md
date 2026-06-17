@@ -20,52 +20,48 @@
 
 
 
-# Dependencies
-
+#NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ## plugins
 
-A hyprland monitor plugin has been used for the workspace overview implementation.
-The repo to download and build is here, just follow its instructions:
-<https://github.com/Happilli/HyprlandMonitor/tree/main>
 
-if you dont want to mannually build it and go through the installation you can use the old method, by replacing all the instances of Mousemover with Mousemoverold in the AppLauncher.qml file
+a custom cava plugin is used here:
+
+Link: <https://github.com/Yujonpradhananga/Qt6-Cava-plugin>
+
+You can build the plugin mannually or if you dont want to mannually build it and go through the installation process you can delete the CavaVisualizer.qml file and delete these lines 171-180 from the WallpaperEngine.qml file:
+
+``
+//delete these
+CavaVisualizer {
+  id: s1_cava
+  anchors {
+    left: parent.left
+    right: parent.right
+    top: parent.top
+    topMargin: 0
+  }
+  height: 555
+}
+``
 
 ## fonts used
 
--Linux Biolinum. \
--Montserrat. \
--Glirock.
+-Glirock. (for the time)
 
 # AppLauncher
 
 The AppLauncher requires a hyprland keybind for it to work.
-bind = $mainMod, R, exec, quickshell -c /Location to where its installed/ ipc call searchapp toggle.
 
 Mine is set like this:
-
-bind = $mainMod, R, exec, quickshell -c /home/yujon/Projects/quickshell/ ipc call searchapp toggle
-
-## Vim motion
-
-You can move up and down the AppLauncher with ctrl+k and ctrl+j and the mouse as well. You can also search for apps but the search bar is hidden for aesthetics lolz.
-
-# For MangoWC support
-
-replace the Mousemover.qml in the OnClicked in the AppDrawer.qml file to the Mousemoverwlroots.qml
-
+``
+hl.bind(
+	mainMod .. " + R",
+	hl.dsp.exec_cmd("qs -c /path to where you have installed the repo/Persona-Quickshell/ ipc call searchapp toggle")
+)
+``
 # Power menu
 
 the power menu currently uses loginctl commands, feel free to change them to your needs.
-
-# Credits
-
-Inspiration taken from:
-PERSONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
-#
-
-Not perfect, certain modules can be optimized better. Feel free to pr and suggest improvements.
-thnx for checking it out
 
 ## License
 
