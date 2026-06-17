@@ -59,6 +59,12 @@ hl.bind(
 
 ---
 
+## Credits:
+the greyscale shader is from:
+https://github.com/snes19xx/surface-dots/blob/main/.config/hypr/shaders/reading_mode.glsl
+@snes19xx
+
+
 ## Power Menu
 
 The power menu currently uses loginctl commands, feel free to change them to your needs.
