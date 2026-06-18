@@ -66,10 +66,6 @@ Scope {
                     return true;
                 });
             }
-            Wid.P3rTransitionApp {
-                id: appTransition
-                targetScreen: window.screen
-            }
             Timer {
                 id: focusTimer
                 interval: 50
