@@ -98,7 +98,7 @@ Scope {
                     id: pngSequence
                     anchors.fill: parent
                     fillMode: Image.PreserveAspectCrop
-                    visible: false          // ← start hidden
+                    visible: false
                     cache: true
                     asynchronous: false
                     property int currentFrame: 0
@@ -108,7 +108,7 @@ Scope {
 
                     onStatusChanged: {
                         if (status === Image.Ready && currentFrame === 0) {
-                            visible = true;  // ← show only once frame 0 is loaded
+                            visible = true;
                         }
                     }
 

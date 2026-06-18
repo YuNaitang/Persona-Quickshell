@@ -78,7 +78,6 @@ Scope {
                 z: 3
                 visible: root.contentVisible
                 property int activeCard: 0
-                // ── Left cards ──────────────────────────────────────────
                 Column {
                     anchors {
                         left: parent.left
@@ -295,7 +294,6 @@ Scope {
                     }
                 }
 
-                // ── Right detail panel ───────────────────────────────────
                 Rectangle {
                     id: detailPanel
                     anchors {

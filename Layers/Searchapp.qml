@@ -89,7 +89,6 @@ Scope {
                 }
             }
 
-            // ── Outer skewed panel ──
             Item {
                 id: panelRoot
                 anchors.left: parent.left
@@ -97,8 +96,6 @@ Scope {
                 anchors.verticalCenter: parent.verticalCenter
                 width: 380
                 height: 700
-
-                // white border outline
                 Rectangle {
                     anchors.fill: parent
                     anchors.margins: -3
@@ -110,8 +107,6 @@ Scope {
                         matrix: Qt.matrix4x4(1, -0.04, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
                     }
                 }
-
-                // dark background
                 Rectangle {
                     anchors.fill: parent
                     color: "#111827"
@@ -121,18 +116,13 @@ Scope {
                         matrix: Qt.matrix4x4(1, -0.04, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
                     }
                 }
-
                 Column {
                     anchors.fill: parent
                     anchors.margins: 0
                     spacing: 0
-
-                    // ── Header ──
                     Item {
                         width: parent.width
                         height: 80
-
-                        // blue triangle accent
                         Canvas {
                             anchors.left: parent.left
                             anchors.leftMargin: 20
@@ -151,7 +141,6 @@ Scope {
                                 ctx.fillStyle = "#1a6aff";
                                 ctx.fill();
                             }
-
                             Text {
                                 anchors.centerIn: parent
                                 text: "APPS"
@@ -161,8 +150,6 @@ Scope {
                                 font.letterSpacing: 3
                             }
                         }
-
-                        // search input
                         Rectangle {
                             anchors.right: parent.right
                             anchors.rightMargin: 16
@@ -213,16 +200,12 @@ Scope {
                             }
                         }
                     }
-
-                    // blue divider line
                     Rectangle {
                         width: parent.width
                         height: 2
                         color: "#1a6aff"
                         opacity: 0.6
                     }
-
-                    // ── App list ──
                     ListView {
                         id: appList
                         width: parent.width
@@ -250,7 +233,6 @@ Scope {
 
                             property bool isActive: appList.currentIndex === index
 
-                            // active highlight
                             Rectangle {
                                 anchors.fill: parent
                                 color: delegateRoot.isActive ? "#ffffff" : "transparent"
@@ -262,7 +244,6 @@ Scope {
                                 }
                             }
 
-                            // blue left accent on active
                             Rectangle {
                                 anchors.left: parent.left
                                 anchors.top: parent.top
@@ -276,8 +257,6 @@ Scope {
                                 anchors.fill: parent
                                 anchors.leftMargin: 0
                                 spacing: 0
-
-                                // app icon
                                 Item {
                                     width: 56
                                     height: parent.height
@@ -312,8 +291,6 @@ Scope {
                                         }
                                     }
                                 }
-
-                                // app name + description
                                 Column {
                                     anchors.verticalCenter: parent.verticalCenter
                                     spacing: 4
@@ -349,8 +326,6 @@ Scope {
                                     }
                                 }
                             }
-
-                            // bottom divider
                             Rectangle {
                                 anchors.bottom: parent.bottom
                                 anchors.left: parent.left
@@ -375,8 +350,6 @@ Scope {
                     }
                 }
             }
-
-            // click outside to close
             MouseArea {
                 anchors.fill: parent
                 z: -1

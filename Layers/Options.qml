@@ -102,8 +102,6 @@ Scope {
                     revealed: optionsWindow.barsRevealed
                     mounted: root.contentVisible
                 }
-
-                // ── bars ──
                 Column {
                     anchors.left: parent.left
                     anchors.verticalCenter: parent.verticalCenter

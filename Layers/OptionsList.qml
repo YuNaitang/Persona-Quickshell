@@ -38,7 +38,6 @@ Item {
         },
     ]
 
-    // shader path used per-tab when toggled on
     readonly property var shaderPaths: [Qt.resolvedUrl("../Assets/ScreenShaders/bluelight.frag").toString().replace("file://", ""), Qt.resolvedUrl("../Assets/ScreenShaders/grey.glsl").toString().replace("file://", ""), Qt.resolvedUrl("../Assets/ScreenShaders/invert.glsl").toString().replace("file://", "")]
 
     readonly property string offShader: Qt.resolvedUrl("../Assets/ScreenShaders/vibrant.glsl").toString().replace("file://", "")
@@ -66,7 +65,6 @@ Item {
         onExited: (code, status) => console.log("Exited:", code, status)
     }
 
-    // dim overlay
     Rectangle {
         anchors.fill: parent
         color: "#ad282d36"
@@ -79,7 +77,6 @@ Item {
         }
     }
 
-    // portrait shell
     Item {
         id: portraitShell
         z: 50
@@ -147,7 +144,6 @@ Item {
         }
     }
 
-    // reveal panel
     Item {
         id: revealPanel
         z: 20
@@ -309,7 +305,6 @@ Item {
             }
         }
 
-        // ── shader toggle button (formerly the static "lower" text bar) ──
         Rectangle {
             id: lowerBar
             anchors.top: upperBar.bottom
@@ -375,7 +370,6 @@ Item {
         }
     }
 
-    // nav arrows row
     Row {
         z: 14
         x: parent.width * 0.06
