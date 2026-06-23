@@ -179,34 +179,6 @@ WlrLayershell {
             height: 555
         }
 
-        Text {
-            text: clock.date.toLocaleString(Qt.locale("en_US"), "h")
-            font.pixelSize: 300
-            font.bold: true
-            font.family: "Glirock"
-            color: Dat.Colors.color9
-            anchors {
-                horizontalCenter: parent.horizontalCenter
-                horizontalCenterOffset: -parent.width * 0.15
-                bottom: parent.bottom
-                bottomMargin: parent.height * 0.620
-            }
-        }
-
-        Text {
-            text: clock.date.toLocaleString(Qt.locale("en_US"), "mm")
-            font.pixelSize: 300
-            font.bold: true
-            font.family: "Glirock"
-            color: Dat.Colors.color6
-            anchors {
-                horizontalCenter: parent.horizontalCenter
-                horizontalCenterOffset: parent.width * 0.104
-                bottom: parent.bottom
-                bottomMargin: parent.height * 0.620
-            }
-        }
-
         Image {
             id: s1_fg
             source: Qt.resolvedUrl("../Assets/p3r imgs/fg.png")

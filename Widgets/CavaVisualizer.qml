@@ -9,6 +9,12 @@ Item {
         bars: 50
         active: true
     }
+    Text {
+        anchors.top: parent.top
+        color: "white"
+        font.pixelSize: 12
+        text: cava.values.length > 0 ? cava.values[0].toFixed(3) : "no data"
+    }
     Canvas {
         id: canvas
         clip: false

@@ -19,7 +19,7 @@ ShellRoot {
         }
     }
     Lay.Capsule {}
-    //Lay.Datee {}
+    Lay.Clock {}
     Lay.AppDrawer {}
     Lay.VolumeOsd {}
     Lay.BrightnessOsd {}
