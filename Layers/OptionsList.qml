@@ -22,17 +22,17 @@ Item {
     }
     readonly property var revealContent: [
         {
-            upper: ["Filter to reduce Bluelight"],
+            upper: ["Filter blue light for eye comfort"],
             lower: "blue light filter",
             portrait: Qt.resolvedUrl("../Assets/components/mainm.jpeg")
         },
         {
-            upper: ["Black and white only"],
-            lower: "grey scale filter",
+            upper: ["Display in black and white only"],
+            lower: "grayscale filter",
             portrait: Qt.resolvedUrl("../Assets/components/mainm2.jpeg")
         },
         {
-            upper: ["Invert all the colors cuz why not"],
+            upper: ["Invert all on-screen colors"],
             lower: "inversion filter",
             portrait: Qt.resolvedUrl("../Assets/components/mainf.jpeg")
         },
@@ -223,7 +223,7 @@ Item {
             spacing: 12
 
             Repeater {
-                model: ["Bluelight", "Greyscale", "Inversion"]
+                model: ["Blue Light", "Grayscale", "Invert"]
                 delegate: Item {
                     required property string modelData
                     required property int index

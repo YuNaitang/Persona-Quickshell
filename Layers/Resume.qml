@@ -88,7 +88,7 @@ Scope {
                     spacing: 10
                     Text {
                         text: "LIST"
-                        font.family: "proggyfonts"
+                        font.family: "ProggyCleanTT"
                         font.pixelSize: 72
                         color: "#f6fbff"
                         leftPadding: 12
@@ -104,7 +104,7 @@ Scope {
                             {
                                 badge: "II",
                                 title: "Network",
-                                subtitle: "Wifi Networks and connections",
+                                subtitle: "Wi-Fi Networks and Connections",
                                 rank: 4
                             },
                             {
@@ -342,7 +342,7 @@ Scope {
                         }
                         height: 92
                         property string indexText: ["01", "02", "03"][detailPanel.parent.activeCard]
-                        property string titleText: ["System Stats", "Wifi networks", "Bluetooth devices"][detailPanel.parent.activeCard]
+                        property string titleText: ["System Stats", "Wi-Fi Networks", "Bluetooth Devices"][detailPanel.parent.activeCard]
                         onIndexTextChanged: requestPaint()
                         Connections {
                             target: root
