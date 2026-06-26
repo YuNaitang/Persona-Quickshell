@@ -213,7 +213,7 @@ Scope {
                         model: [
                             {
                                 icon: "( •_•)",
-                                label: "Calendar",
+                                label: "日历",
                                 action: () => {
                                     calendarLayer.targetScreen = panel.screen;
                                     calendarLayer.shouldShow = true;
@@ -221,7 +221,7 @@ Scope {
                             },
                             {
                                 icon: "^▽^",
-                                label: "Stats",
+                                label: "信息",
                                 action: () => {
                                     resumeLayer.targetScreen = panel.screen;
                                     resumeLayer.shouldShow = true;
@@ -229,7 +229,7 @@ Scope {
                             },
                             {
                                 icon: "╥_╥",
-                                label: "Shaders",
+                                label: "着色器",
                                 action: () => {
                                     optionsLayer.targetScreen = panel.screen;
                                     optionsLayer.shouldShow = true;
@@ -237,7 +237,7 @@ Scope {
                             },
                             {
                                 icon: "•́︿•̀",
-                                label: "Power",
+                                label: "电源",
                                 action: () => {
                                     p3rpause.targetScreen = panel.screen;
                                     p3rpause.shouldShow = true;

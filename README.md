@@ -4,8 +4,8 @@
 
 [![QML](https://img.shields.io/badge/QML-Quickshell-7aa2f7?style=for-the-badge&logo=qt&logoColor=white)](https://quickshell.outfoxxed.me)
 [![Stars](https://img.shields.io/github/stars/YuNaitang/Persona-Quickshell?style=for-the-badge&color=e0af68&logoColor=white)](https://github.com/YuNaitang/Persona-Quickshell/stargazers)
-[![Hyprland](https://img.shields.io/badge/Hyprland-supported-2ac3de?style=for-the-badge&logoColor=white)](https://hyprland.org)
-[![Forked from](https://img.shields.io/badge/Forked%20from-Yujonpradhananga-9ece6a?style=for-the-badge&logoColor=white)](https://github.com/Yujonpradhananga/Persona-Quickshell-)
+[![Hyprland](https://img.shields.io/badge/Hyprland-%E5%B7%B2%E6%94%AF%E6%8C%81-2ac3de?style=for-the-badge&logoColor=white)](https://hyprland.org)
+[![Forked from](https://img.shields.io/badge/%E8%A1%8D%E7%94%9F%E8%87%AA-Yujonpradhananga-9ece6a?style=for-the-badge&logoColor=white)](https://github.com/Yujonpradhananga/Persona-Quickshell-)
 
 </div>
 
@@ -13,17 +13,17 @@
 
 ---
 
-## Dependencies
+## 依赖安装
 
-### Plugins
+### 插件
 
-A custom cava plugin is used here:
-**Link:** <https://github.com/Yujonpradhananga/Qt6-Cava-plugin>
+使用自定义 Cava 音频可视化插件：
+**链接：** <https://github.com/Yujonpradhananga/Qt6-Cava-plugin>
 
-You can build the plugin manually or if you don't want to manually build it and go through the installation process, you can delete the `CavaVisualizer.qml` file and delete these lines 171-180 from the `WallpaperEngine.qml` file:
+你可以手动构建该插件，也可以直接删除 `CavaVisualizer.qml` 文件以及 `WallpaperEngine.qml` 中的相关代码（第 171-180 行）：
 
 ```qml
-//delete these
+// 删除这些代码
 CavaVisualizer {
   id: s1_cava
   anchors {
@@ -36,67 +36,68 @@ CavaVisualizer {
 }
 ```
 
-### Fonts Used
+### 使用字体
 
-- Glirock (for the time)
-- Montserrat (for UI elements)
-- Bebas Neue (for accent text)
-- Linux Biolinum (for music player)
-- Microsoft Yahei / Noto CJK (for CJK glyphs)
-- Material Symbols Rounded (for icons)
+- Glirock（时间显示）
+- Montserrat（UI 元素）
+- Bebas Neue（强调文本）
+- Linux Biolinum（音乐播放器）
+- Microsoft Yahei / Noto CJK（中文字形）
+- Material Symbols Rounded（图标）
+- ProggyCleanTT（菜单标题）
 
 ---
 
-## Quick Start
+## 快速开始
 
-### Hyprland Setup
+### Hyprland 配置
 
-Create `~/.config/hypr/hyprland.conf` with:
+创建 `~/.config/hypr/hyprland.conf`，添加以下内容：
 
 ```
-# Start Persona-Quickshell on login
+# 登录时自动启动
 exec-once = qs -p /path/to/Persona-Quickshell/
 
-# Keybind to open search panel (SUPER+R or SUPER+Q)
+# 快捷键打开搜索面板
 bind = SUPER, R, exec, qs -p /path/to/Persona-Quickshell/ ipc call searchapp toggle
 bind = SUPER, Q, exec, qs -p /path/to/Persona-Quickshell/ ipc call searchapp toggle
 ```
 
-Then select **Hyprland** from your display manager login screen.
+然后在登录管理器中选择 **Hyprland** 会话即可。
 
-### Running Without Hyprland
+### 直接运行
 
 ```bash
-# From the project directory
+# 在项目目录中运行
 qs -p /path/to/Persona-Quickshell/
 ```
 
-### IPC
+### IPC 控制
 
 ```bash
-# Toggle the search app panel
+# 开关搜索面板
 qs -p /path/to/Persona-Quickshell/ ipc call searchapp toggle
 ```
 
 ---
 
-## Credits
+## 致谢
 
-- Original creator: **[Yujon Pradhananga](https://github.com/Yujonpradhananga)**
-- The wallpaper is from: [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3151551777)
-- The greyscale shader is from [@snes19xx](https://github.com/snes19xx)'s [surface-dots](https://github.com/snes19xx/surface-dots/blob/main/.config/hypr/shaders/reading_mode.glsl)
-- The media player's album art implementation is taken from [Rexcrazy804](https://github.com/Rexcrazy804)'s [Zaphkiel](https://github.com/Rexcrazy804/Zaphkiel)
-- Shoutout to [blairxu13](https://github.com/blairxu13)'s [persona3-website](https://github.com/blairxu13/persona3-website)
+- 原作者：**[Yujon Pradhananga](https://github.com/YujonPradhananga)**
+- 壁纸来源：[Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3151551777)
+- 灰度着色器来自 [@snes19xx](https://github.com/snes19xx) 的 [surface-dots](https://github.com/snes19xx/surface-dots/blob/main/.config/hypr/shaders/reading_mode.glsl)
+- 音乐播放器封面实现参考 [Rexcrazy804](https://github.com/Rexcrazy804) 的 [Zaphkiel](https://github.com/Rexcrazy804/Zaphkiel)
+- 感谢 [blairxu13](https://github.com/blairxu13) 的 [persona3-website](https://github.com/blairxu13/persona3-website)
 
-### Power Menu
+### 电源菜单
 
-The power menu currently uses `loginctl` commands, feel free to change them to your needs.
+电源菜单使用 `loginctl` 命令（关机/重启/注销），可根据需要自行替换。
 
 ---
 
-## License
+## 许可证
 
-MIT License — feel free to use and modify as needed.
+MIT License — 可自由使用和修改。
 
-Created by [Yujon Pradhananga](https://github.com/Yujonpradhananga).  
-Forked and maintained by [YuNaitang](https://github.com/YuNaitang).
+原作者：[Yujon Pradhananga](https://github.com/YujonPradhananga)  
+Fork 维护：[YuNaitang](https://github.com/YuNaitang)

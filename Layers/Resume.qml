@@ -87,7 +87,7 @@ Scope {
                     }
                     spacing: 10
                     Text {
-                        text: "LIST"
+                        text: "菜单"
                         font.family: "ProggyCleanTT"
                         font.pixelSize: 72
                         color: "#f6fbff"
@@ -97,20 +97,20 @@ Scope {
                         model: [
                             {
                                 badge: "I",
-                                title: "Stats",
-                                subtitle: "System Stats and Info",
+                                title: "系统信息",
+                                subtitle: "系统状态与硬件信息",
                                 rank: 3
                             },
                             {
                                 badge: "II",
-                                title: "Network",
-                                subtitle: "Wi-Fi Networks and Connections",
+                                title: "网络",
+                                subtitle: "Wi-Fi 网络与连接管理",
                                 rank: 4
                             },
                             {
                                 badge: "III",
-                                title: "Bluetooth",
-                                subtitle: "Bluetooth Devices",
+                                title: "蓝牙",
+                                subtitle: "蓝牙设备管理",
                                 rank: 5
                             },
                         ]
@@ -217,7 +217,7 @@ Scope {
                                 }
                                 spacing: 8
                                 Text {
-                                    text: "RANK"
+                                    text: "等级"
                                     font.family: "Montserrat"
                                     font.pixelSize: 22
                                     color: cardWrap.isActive ? "#000" : "#9ffbff"
@@ -342,7 +342,7 @@ Scope {
                         }
                         height: 92
                         property string indexText: ["01", "02", "03"][detailPanel.parent.activeCard]
-                        property string titleText: ["System Stats", "Wi-Fi Networks", "Bluetooth Devices"][detailPanel.parent.activeCard]
+                        property string titleText: ["系统状态", "Wi-Fi 网络", "蓝牙设备"][detailPanel.parent.activeCard]
                         onIndexTextChanged: requestPaint()
                         Connections {
                             target: root
@@ -411,36 +411,36 @@ Scope {
                                     var _ = Info.SysInfo.cpuUsage + Info.SysInfo.memUsage + Info.SysInfo.diskUsage;
                                     return [[
                                             {
-                                                title: "OS",
+                                                title: "系统",
                                                 status: Info.SysInfo.osName
                                             },
                                             {
-                                                title: "CPU",
+                                                title: "处理器",
                                                 status: Math.round(Info.SysInfo.cpuUsage * 100) + "%"
                                             },
                                             {
-                                                title: "RAM",
+                                                title: "内存",
                                                 status: Info.SysInfo.memText
                                             },
                                             {
-                                                title: "DISK",
+                                                title: "磁盘",
                                                 status: Info.SysInfo.diskText
                                             },
                                             {
-                                                title: "Users",
+                                                title: "用户",
                                                 status: Info.SysInfo.loggedInUsers
                                             },
                                         ], Info.NetInfo.networks.map((n, i) => ({
                                                     title: n.ssid,
-                                                    status: n.active ? "Connected" : (n.strength + "%")
+                                                    status: n.active ? "已连接" : (n.strength + "%")
                                                 })), Info.BluetoothInfo.friendlyDeviceList.length === 0 ? [
                                             {
-                                                title: Info.BluetoothInfo.available ? "Bluetooth Off" : "No Adapter",
-                                                status: Info.BluetoothInfo.enabled ? "No Devices" : "Disabled"
+                                                title: Info.BluetoothInfo.available ? "蓝牙已关闭" : "无适配器",
+                                                status: Info.BluetoothInfo.enabled ? "无设备" : "已禁用"
                                             }
                                         ] : Info.BluetoothInfo.friendlyDeviceList.map(d => ({
                                                     title: d.name,
-                                                    status: d.connected ? "Connected" : (d.paired ? "Paired" : "Found")
+                                                    status: d.connected ? "已连接" : (d.paired ? "已配对" : "已发现")
                                                 })), [],][ac];
                                 }
 

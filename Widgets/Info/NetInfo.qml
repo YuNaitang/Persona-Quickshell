@@ -15,14 +15,14 @@ Singleton {
 
     // Convenience props (drop-in replacements for old networkName / networkStrength / wifiStatus)
     readonly property bool connected: active !== null
-    readonly property string networkName: active?.ssid ?? "Not Connected"
+    readonly property string networkName: active?.ssid ?? "未连接"
     readonly property int networkStrength: active?.strength ?? 0
     readonly property string wifiStatus: {
         if (!wifiEnabled)
-            return "disabled";
+            return "已禁用";
         if (active)
-            return "connected";
-        return "disconnected";
+            return "已连接";
+        return "未连接";
     }
 
     // ── Public API ────────────────────────────────────────────────

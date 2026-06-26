@@ -13,17 +13,17 @@ Scope {
     readonly property var barData: [
         {
             role: "LEADER",
-            label: "Blue Light",
+            label: "蓝光滤镜",
             char: Qt.resolvedUrl("../Assets/components/char1.png")
         },
         {
             role: "PARTY",
-            label: "Grayscale",
+            label: "灰度模式",
             char: Qt.resolvedUrl("../Assets/components/char2.png")
         },
         {
             role: "PARTY",
-            label: "Invert",
+            label: "反转色彩",
             char: Qt.resolvedUrl("../Assets/components/char3.png")
         },
     ]

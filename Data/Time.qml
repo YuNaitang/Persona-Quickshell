@@ -25,17 +25,16 @@ Singleton {
     }
 
     readonly property string date: {
-        const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-        return months[now.getMonth()] + "·" + now.getDate().toString().padStart(2, "0");
+        return (now.getMonth() + 1) + "月" + now.getDate().toString().padStart(2, "0") + "日";
     }
 
     readonly property string weekday: {
-        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const days = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
         return days[now.getDay()];
     }
 
     readonly property string daytime: {
-        const labels = ["Dark Hour", "Early Hour", "Early Hour", "Early Hour", "Early Hour", "Dawn", "Dawn", "Morning", "Morning", "Morning", "Morning", "Noon", "Noon", "Noon", "Afternoon", "Afternoon", "Afternoon", "Afternoon", "Dusk", "Evening", "Night", "Night", "Late Night", "Late Night"];
+        const labels = ["Dark Hour", "凌晨", "凌晨", "凌晨", "凌晨", "黎明", "黎明", "上午", "上午", "上午", "上午", "正午", "正午", "正午", "下午", "下午", "下午", "下午", "黄昏", "傍晚", "夜间", "夜间", "深夜", "深夜"];
         return labels[now.getHours()];
     }
 
@@ -53,7 +52,7 @@ Singleton {
     }
 
     readonly property string moonPhaseName: {
-        const phases = ["NEW", "CRESCENT", "QUARTER", "GIBBOUS", "FULL", "GIBBOUS", "QUARTER", "CRESCENT"];
+        const phases = ["新月", "蛾眉月", "上弦月", "盈凸月", "满月", "亏凸月", "下弦月", "残月"];
         if (moonPhaseDegree >= 337.5)
             return phases[0];
         return phases[Math.floor((moonPhaseDegree + 22.5) / 45)];

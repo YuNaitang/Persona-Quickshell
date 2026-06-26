@@ -139,7 +139,7 @@ Scope {
                             }
                             Text {
                                 anchors.centerIn: parent
-                                text: "APPS"
+                                text: "应用"
                                 font.pixelSize: 22
                                 font.bold: true
                                 color: "#ffffff"
@@ -170,7 +170,7 @@ Scope {
                                 Text {
                                     anchors.fill: parent
                                     verticalAlignment: Text.AlignVCenter
-                                    text: "Search..."
+                                    text: "搜索..."
                                     color: "#44ffffff"
                                     font.pixelSize: 13
                                     visible: search.text === ""

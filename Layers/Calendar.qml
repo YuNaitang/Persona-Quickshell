@@ -110,7 +110,7 @@ Scope {
                     color: "white"
                 }
                 Text {
-                    text: Qt.formatDate(Dat.Time.now, "MMMM")
+                    text: Qt.formatDate(Dat.Time.now, "M月")
                     font.family: "Microsoft Yahei"
                     font.pixelSize: 30
                     font.bold: true
@@ -207,7 +207,7 @@ Scope {
             return deg;
         }
 
-        readonly property var dayNames: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+        readonly property var dayNames: ["日", "一", "二", "三", "四", "五", "六"]
         readonly property int dayOfWeek: dateObj.getDay()
         readonly property bool isSunday: dayOfWeek === 0
         readonly property bool isSaturday: dayOfWeek === 6

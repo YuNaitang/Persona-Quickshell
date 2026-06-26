@@ -22,18 +22,18 @@ Item {
     }
     readonly property var revealContent: [
         {
-            upper: ["Filter blue light for eye comfort"],
-            lower: "blue light filter",
+            upper: ["过滤蓝光，保护眼睛"],
+            lower: "蓝光滤镜",
             portrait: Qt.resolvedUrl("../Assets/components/mainm.jpeg")
         },
         {
-            upper: ["Display in black and white only"],
-            lower: "grayscale filter",
+            upper: ["黑白显示模式"],
+            lower: "灰度滤镜",
             portrait: Qt.resolvedUrl("../Assets/components/mainm2.jpeg")
         },
         {
-            upper: ["Invert all on-screen colors"],
-            lower: "inversion filter",
+            upper: ["反转屏幕所有颜色"],
+            lower: "反转滤镜",
             portrait: Qt.resolvedUrl("../Assets/components/mainf.jpeg")
         },
     ]
@@ -223,7 +223,7 @@ Item {
             spacing: 12
 
             Repeater {
-                model: ["Blue Light", "Grayscale", "Invert"]
+                model: ["蓝光", "灰度", "反转"]
                 delegate: Item {
                     required property string modelData
                     required property int index
