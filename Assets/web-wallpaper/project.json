@@ -1,0 +1,264 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "[h1][b] A live2D web wallpaper for Blue Archive [/b][/h1]\n\nBGM: Blue Archive OST Theme 339\n(can choose Theme 341)\n\n[hr][/hr]\n\n[h1]Custom Features[/h1]\n\n[list]\n [*][b]Scale[/b]\n [*][b]Model Resolution[/b] (2K, 4K, 8K)\n [*][b]Target FPS[/b]\n [*][b]Intro Animation[/b]\n [*][b]Dialog[/b]\n [*][b]Headpatting[/b]\n [*][b]Mouse Tracking[/b] (Eye Movement Following Cursor)\n [*][b]Fireworks Effect[/b] on Mouse Click\n [*][b]Background Music (BGM)[/b]\n [*][b]Voiceline Volume Control[/b]\n [/list]\n\nSupports dialog text in [b]Japanese[/b], [b]English[/b], and [b]Simplified Chinese[/b].\n\n[hr][/hr]\n\n[h1]Implementation[/h1]\n\n[list]\n [*]Uses [url=https://github.com/EsotericSoftware/spine-runtimes]spine-webgl[/url] to render Spine models\n [*]Uses [url=https://github.com/nihui/realcugan-ncnn-vulkan]realcugan-ncnn-vulkan[/url] for 4x upscaling (8192×8192) of model textures\n [/list]\n\n[hr][/hr]\n\n[h1]Thanks[/h1]\n [url=https://steamcommunity.com/workshop/filedetails/?id=2956165539]https://steamcommunity.com/workshop/filedetails/?id=2956165539[/url]\n\n[hr][/hr]\n\n[h1]Copyright[/h1]\n\n[quote]Blue Archive is a registered trademark of NAT GAMES Co., Ltd., NEXON Korea Corp., and Yostar, Inc.\n This project is not affiliated with, endorsed by, or connected to NAT GAMES Co., Ltd., NEXON Korea Corp., NEXON GAMES Co., Ltd., IODivision, Yostar, Inc., or any of their subsidiaries or affiliates.\n All game assets, content, and materials are copyrighted by their respective owners and are used for informational and educational purposes only.[/quote]",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"bgmfile" : 
+			{
+				"index" : 13,
+				"options" : 
+				[
+					{
+						"label" : "Theme 341",
+						"value" : "Theme_341.ogg"
+					},
+					{
+						"label" : "Theme 339",
+						"value" : "Theme_339.ogg"
+					}
+				],
+				"order" : 113,
+				"text" : "BGM Selection",
+				"type" : "combo",
+				"value" : "Theme_339.ogg"
+			},
+			"bgmvolume" : 
+			{
+				"fraction" : false,
+				"index" : 14,
+				"max" : 100,
+				"min" : 0,
+				"order" : 114,
+				"text" : "BGM Volume",
+				"type" : "slider",
+				"value" : 20
+			},
+			"dialoglanguage" : 
+			{
+				"condition" : "mouseactions.value == true && voicelines.value == true && showdialog.value == true",
+				"index" : 8,
+				"options" : 
+				[
+					{
+						"label" : "Japanese",
+						"value" : "Japanese"
+					},
+					{
+						"label" : "English",
+						"value" : "English"
+					},
+					{
+						"label" : "Chinese",
+						"value" : "Chinese"
+					}
+				],
+				"order" : 108,
+				"text" : "Dialog Language",
+				"type" : "combo",
+				"value" : "Japanese"
+			},
+			"dialogx" : 
+			{
+				"condition" : "mouseactions.value == true && voicelines.value == true && showdialog.value == true",
+				"fraction" : true,
+				"index" : 9,
+				"max" : 100,
+				"min" : 0,
+				"order" : 109,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "DialogX",
+				"type" : "slider",
+				"value" : 66
+			},
+			"dialogy" : 
+			{
+				"condition" : "mouseactions.value == true && voicelines.value == true && showdialog.value == true",
+				"fraction" : true,
+				"index" : 10,
+				"max" : 100,
+				"min" : 0,
+				"order" : 110,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "DialogY",
+				"type" : "slider",
+				"value" : 50
+			},
+			"drawHitboxes" : 
+			{
+				"condition" : "mouseactions.value == true",
+				"index" : 17,
+				"order" : 117,
+				"text" : "Interactive Area",
+				"type" : "bool",
+				"value" : false
+			},
+			"fireworks" : 
+			{
+				"index" : 15,
+				"order" : 115,
+				"text" : "Fireworks Effect",
+				"type" : "bool",
+				"value" : true
+			},
+			"fireworkstheme" : 
+			{
+				"condition" : "fireworks.value == true",
+				"index" : 16,
+				"options" : 
+				[
+					{
+						"label" : "Light",
+						"value" : "light"
+					},
+					{
+						"label" : "Dark",
+						"value" : "dark"
+					},
+					{
+						"label" : "Follow System",
+						"value" : "system"
+					}
+				],
+				"order" : 116,
+				"text" : "Fireworks Theme",
+				"type" : "combo",
+				"value" : "system"
+			},
+			"headpatting" : 
+			{
+				"condition" : "mouseactions.value == true",
+				"index" : 11,
+				"order" : 111,
+				"text" : "Headpatting",
+				"type" : "bool",
+				"value" : true
+			},
+			"introanimation" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "Intro Animation",
+				"type" : "bool",
+				"value" : true
+			},
+			"modelresolution" : 
+			{
+				"index" : 1,
+				"options" : 
+				[
+					{
+						"label" : "2K",
+						"value" : "2k"
+					},
+					{
+						"label" : "4K",
+						"value" : "4k"
+					},
+					{
+						"label" : "8K",
+						"value" : "8k"
+					}
+				],
+				"order" : 101,
+				"text" : "Model Resolution",
+				"type" : "combo",
+				"value" : "8k"
+			},
+			"mouseactions" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "Show Mouse Actions",
+				"type" : "bool",
+				"value" : false
+			},
+			"mousetracking" : 
+			{
+				"condition" : "mouseactions.value == true",
+				"index" : 12,
+				"order" : 112,
+				"text" : "Mouse Tracking",
+				"type" : "bool",
+				"value" : true
+			},
+			"scale" : 
+			{
+				"fraction" : true,
+				"index" : 0,
+				"max" : 2,
+				"min" : 0.7,
+				"order" : 100,
+				"precision" : 3,
+				"step" : 0.01,
+				"text" : "Scale",
+				"type" : "slider",
+				"value" : 0.8
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"showdialog" : 
+			{
+				"condition" : "mouseactions.value == true && voicelines.value == true",
+				"index" : 7,
+				"order" : 107,
+				"text" : "Show Dialog",
+				"type" : "bool",
+				"value" : true
+			},
+			"targetfps" : 
+			{
+				"fraction" : false,
+				"index" : 2,
+				"max" : 144,
+				"min" : 30,
+				"order" : 102,
+				"text" : "Target FPS",
+				"type" : "slider",
+				"value" : 60
+			},
+			"voicelines" : 
+			{
+				"condition" : "mouseactions.value == true",
+				"index" : 5,
+				"order" : 105,
+				"text" : "Voicelines",
+				"type" : "bool",
+				"value" : true
+			},
+			"voicevolume" : 
+			{
+				"condition" : "mouseactions.value == true && voicelines.value == true",
+				"fraction" : true,
+				"index" : 6,
+				"max" : 100,
+				"min" : 0,
+				"order" : 106,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "Volume",
+				"type" : "slider",
+				"value" : 20
+			}
+		}
+	},
+	"preview" : "preview.gif",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"tags" : [ "Anime" ],
+	"title" : "Blue Archive | Kei",
+	"type" : "Web",
+	"version" : 11,
+	"visibility" : "public",
+	"workshopid" : "3650880224",
+	"workshopurl" : "steam://url/CommunityFilePage/3650880224"
+}

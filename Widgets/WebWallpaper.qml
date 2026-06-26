@@ -1,5 +1,5 @@
 import QtQuick
-import QtQuick.WebEngine
+import QtWebEngine
 import Quickshell
 import Quickshell.Wayland
 import qs.Data as Dat
@@ -29,6 +29,15 @@ WlrLayershell {
 
     /// 网页壁纸的 index.html 路径（相对于项目根目录）
     property string wallpaperPath: Qt.resolvedUrl("../Assets/web-wallpaper/index.html").toString()
+
+    /// 是否启用音频（网页壁纸自带 BGM）
+    property bool enableAudio: true
+
+    /// 壁纸音量 (0.0 ~ 1.0)
+    property real audioVolume: 0.5
+
+    /// 背景音乐文件路径（为空则使用壁纸自带的音频）
+    property string bgmSource: ""
 
     /// 是否启用鼠标交互（建议 false，让点击穿透到桌面）
     property bool interactive: false
@@ -67,28 +76,18 @@ WlrLayershell {
         // 背景透明（如果网页壁纸有透明区域）
         backgroundColor: Qt.rgba(0, 0, 0, 0)
 
-        // 鼠标交互控制
-        interactive: root.interactive
-
         // 初始缩放
         zoomFactor: 1.0
 
-        // 加载设置
+        // 加载设置（仅支持 Qt6 WebEngine 实际存在的属性）
         settings {
-            // 允许本地文件访问
             localContentCanAccessRemoteUrls: false
             localContentCanAccessFileUrls: true
-            // 禁用滚动条
-            showScrollBars: false
-            // 允许 JavaScript
             javascriptEnabled: true
-            // 允许 WebGL（很多动态壁纸需要）
-            webglEnabled: true
-            // 自动播放视频/音频
             autoLoadImages: true
-            playbackRequiresUserGesture: false
-            // 禁用错误页面
+            pluginsEnabled: true
             errorPageEnabled: false
+            fullScreenSupportEnabled: true
         }
 
         // ── 加载完成时 ──
