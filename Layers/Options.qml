@@ -10,6 +10,15 @@ Scope {
     property var targetScreen: null
     property bool contentVisible: false
 
+    FontLoader {
+        id: bebasNeue
+        source: Qt.resolvedUrl("../Assets/fonts/BebasNeue-Regular.otf")
+    }
+    FontLoader {
+        id: montserrat
+        source: Qt.resolvedUrl("../Assets/fonts/Montserrat-Light.ttf")
+    }
+
     readonly property var barData: [
         {
             role: "LEADER",

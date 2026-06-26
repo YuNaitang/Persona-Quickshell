@@ -14,7 +14,7 @@ Item {
     onActiveBarChanged: localTab = activeBar
     FontLoader {
         id: bebasNeue
-        source: Qt.resolvedUrl("../Assets/fonts/BebasNeue-Regular.ttf")
+        source: Qt.resolvedUrl("../Assets/fonts/BebasNeue-Regular.otf")
     }
     FontLoader {
         id: montserrat
